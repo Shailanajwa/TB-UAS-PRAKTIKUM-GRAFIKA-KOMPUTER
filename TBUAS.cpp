@@ -333,24 +333,31 @@ void update(int value)
 }
 void myKeyboard(unsigned char key, int x, int y)
 {
+
+//Batas minumum dan maksimum posisi dadu pada translasi	
+const float Min_X = -12.0;
+const float Max_X = 13.0;
+const float Min_Scale = 0.5;
+const float Max_Scale = 2.0;
+
  if (key == 's') // Tombol 's' untuk bergerak ke Kanan
     {
-        if (!isMoving) // Bergerak saat Rotasi Berhenti
+        if (!isMoving && dicePosX + 0.1 <= Max_X) // Bergerak saat Rotasi Berhenti
             dicePosX += 0.1;
     }
     else if (key == 'r') // Tombol 'r' untuk bergerak ke Kiri
     {
-        if (!isMoving) // Bergerak saat Rotasi Berhenti
+        if (!isMoving && dicePosX - 0.1 >= Min_X) // Bergerak saat Rotasi Berhenti
             dicePosX -= 0.1;
     }
      else if (key == 'n') // Tombol 'n' untuk Memperkecil Dadu
     {
-        if (!isMoving) // Bergerak saat Rotasi Berhenti
+        if (!isMoving && diceScale - 0.1 >= Min_Scale) // Bergerak saat Rotasi Berhenti
             diceScale -= 0.1;
     }
      else if (key == 'a') // Tombol 'a' untuk Memperbesar Dadu
     {
-        if (!isMoving) // Bergerak saat Rotasi Berhenti
+        if (!isMoving && diceScale + 0.1 <= Max_Scale) // Bergerak saat Rotasi Berhenti
             diceScale += 0.1;
     }
     glutPostRedisplay();
