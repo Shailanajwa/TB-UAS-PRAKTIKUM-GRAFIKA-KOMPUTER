@@ -335,10 +335,10 @@ void myKeyboard(unsigned char key, int x, int y)
 {
 
 //Batas minumum dan maksimum posisi dadu pada translasi	
-const float Min_X = -12.0;
-const float Max_X = 13.0;
-const float Min_Scale = 0.5;
-const float Max_Scale = 2.0;
+float Min_X = -12.0;
+float Max_X = 13.0;
+float Min_Scale = 0.5;
+float Max_Scale = 2.0;
 switch (key)
 {
     case 's': // Tombol 's' untuk bergerak ke Kanan
